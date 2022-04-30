@@ -18,6 +18,14 @@ from groups.ISP4 import isp_402_403_52_00
 from groups.ZIO1 import zio_102_52_00
 from groups.ZIO2 import zio_202_101_52_00
 from groups.ZIO3 import zio_302_201_52_00
+from groups.FK1 import fk_102_104_52_00
+from groups.FK1 import fk_103_52_00
+from groups.FK2 import fk_202_52_00
+from groups.FK2 import fk_203_101_52_00
+from groups.FK3 import fk_302_52_00
+from groups.FK3 import fk_303_52_00
+from groups.FK3 import fk_301_201_52_00
+from groups.FK4 import fk_401_402_304_52_00
 import setings
 
 from datetime import datetime, date, time
@@ -85,7 +93,31 @@ def day_lessons(message):
 				less = zio_202_101_52_00
 				less.handle_text(message, bot)
 			elif gr.value == 'ЗИОк-302':
-				less = zio_202_101_52_00
+				less = zio_302_201_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-102':
+				less = fk_102_104_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-103':
+				less = fk_103_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-202':
+				less = fk_202_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-203':
+				less = fk_203_101_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-301':
+				less = fk_301_201_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-302':
+				less = fk_302_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-303':
+				less = fk_303_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФКк-401':
+				less = fk_401_402_304_52_00
 				less.handle_text(message, bot)
 
 
@@ -186,6 +218,30 @@ def handle_text(message):
 		base_group(bot, group, message)
 	elif (message.text.strip() == 'ЗИОк-302-51-00') or (message.text.strip() == 'ЗИОк-201-51-00') or (message.text.strip() == 'ЗИОк-302') or (message.text.strip() == 'ЗИОк-101'):
 		group = 'ЗИОк-302'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-102-52-00') or (message.text.strip() == 'ФКк-104-51-00') or (message.text.strip() == 'ФКк-102') or (message.text.strip() == 'ФКк-104'):
+		group = 'ФКк-102'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-103-52-00') or (message.text.strip() == 'ФКк-103'):
+		group = 'ФКк-103'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-202-52-00') or (message.text.strip() == 'ФКк-202'):
+		group = 'ФКк-202'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-203-52-00') or (message.text.strip() == 'ФКк-101-51-00') or (message.text.strip() == 'ФКк-203') or (message.text.strip() == 'ФКк-101'):
+		group = 'ФКк-203'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-301-52-00') or (message.text.strip() == 'ФКк-201-51-00') or (message.text.strip() == 'ФКк-301') or (message.text.strip() == 'ФКк-201'):
+		group = 'ФКк-301'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-302-52-00') or (message.text.strip() == 'ФКк-302'):
+		group = 'ФКк-302'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-303-52-00') or (message.text.strip() == 'ФКк-303'):
+		group = 'ФКк-303'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФКк-401-52-00') or (message.text.strip() == 'ФКк-402-52-00') or (message.text.strip() == 'ФКк-304-52-00') or (message.text.strip() == 'ФКк-401') or (message.text.strip() == 'ФКк-402') or (message.text.strip() == 'ФКк-304'):
+		group = 'ФКк-401'
 		base_group(bot, group, message)
 
 	if message.text.strip() == 'Сегодня':
