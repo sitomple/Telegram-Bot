@@ -8,6 +8,13 @@ from groups.ISP1 import isp_105_52_00
 from groups.ISP1 import isp_104_52_00
 from groups.ISP1 import isp_102_52_00
 from groups.ISP1 import isp_103_52_00
+from groups.ISP3 import isp_201_52_00
+from groups.ISP3 import isp_302_52_00
+from groups.ISP3 import isp_303_52_00
+from groups.ISP3 import isp_304_52_00
+from groups.ISP3 import isp_305_52_00
+from groups.ISP4 import isp_401_301_52_00
+from groups.ISP4 import isp_402_403_52_00
 import setings
 
 from datetime import datetime, date, time
@@ -47,6 +54,28 @@ def day_lessons(message):
 			elif gr.value == 'ИСПк-103':
 				less = isp_103_52_00
 				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-201':
+				less = isp_201_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-302':
+				less = isp_302_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-303':
+				less = isp_303_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-304':
+				less = isp_304_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-305':
+				less = isp_305_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-401':
+				less = isp_401_301_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ИСПк-402':
+				less = isp_402_403_52_00
+				less.handle_text(message, bot)
+
 
 def base_group(bot, group, message):
 		bot.send_message(message.chat.id, f'Активная группа: {message.text.strip()}-52-00')
@@ -116,7 +145,27 @@ def handle_text(message):
 	elif (message.text.strip() == 'ИСПк-103-52-00') or (message.text.strip() == 'ИСПк-103'):
 		group = 'ИСПк-103'
 		base_group(bot, group, message)
-
+	elif (message.text.strip() == 'ИСПк-201-52-00') or (message.text.strip() == 'ИСПк-201'):
+		group = 'ИСПк-201'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-302-52-00') or (message.text.strip() == 'ИСПк-302'):
+		group = 'ИСПк-302'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-303-52-00') or (message.text.strip() == 'ИСПк-303'):
+		group = 'ИСПк-303'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-304-52-00') or (message.text.strip() == 'ИСПк-304'):
+		group = 'ИСПк-304'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-305-52-00') or (message.text.strip() == 'ИСПк-305'):
+		group = 'ИСПк-305'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-301-51-00') or (message.text.strip() == 'ИСПк-401-52-00') or (message.text.strip() == 'ИСПк-301') or (message.text.strip() == 'ИСПк-401') :
+		group = 'ИСПк-401'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ИСПк-402-51-00') or (message.text.strip() == 'ИСПк-403-52-00') or (message.text.strip() == 'ИСПк-402') or (message.text.strip() == 'ИСПк-403'):
+		group = 'ИСПк-402'
+		base_group(bot, group, message)
 
 	if message.text.strip() == 'Сегодня':
 		day_lessons(message)

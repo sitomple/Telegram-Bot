@@ -27,7 +27,7 @@ def handle_text(message,bot):
 def Monday(message, day,bot):
 	bot.send_message(message.chat.id, "Понедельник:")
 	cells = sheet['AX26':'BF32']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None ) & (lesson.value != None ) & (room.value != None ) :
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
@@ -35,7 +35,7 @@ def Monday(message, day,bot):
 def Tuesday(message, day,bot):
 	bot.send_message(message.chat.id, "Вторник:")
 	cells = sheet['AX33':'BF40']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
@@ -43,7 +43,7 @@ def Tuesday(message, day,bot):
 def Wednesday(message, day,bot):
 	bot.send_message(message.chat.id, "Среда:")
 	cells = sheet['AX41':'BF47']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
@@ -51,7 +51,7 @@ def Wednesday(message, day,bot):
 def Thursday(message, day,bot):
 	bot.send_message(message.chat.id, "Четверг:")
 	cells = sheet['AX48':'BF54']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
@@ -59,7 +59,7 @@ def Thursday(message, day,bot):
 def Friday(message, day,bot):
 	bot.send_message(message.chat.id, "Пятница:")
 	cells = sheet['AX55':'BF61']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
@@ -67,7 +67,7 @@ def Friday(message, day,bot):
 def Saturday(message, day,bot):
 	bot.send_message(message.chat.id, "Суббота:")
 	cells = sheet['AX62':'BF67']
-	for time, a, b, c, d, lesson, e, f room, in cells:
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
