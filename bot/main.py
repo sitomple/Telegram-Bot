@@ -15,6 +15,9 @@ from groups.ISP3 import isp_304_52_00
 from groups.ISP3 import isp_305_52_00
 from groups.ISP4 import isp_401_301_52_00
 from groups.ISP4 import isp_402_403_52_00
+from groups.ZIO1 import zio_102_52_00
+from groups.ZIO2 import zio_202_101_52_00
+from groups.ZIO3 import zio_302_201_52_00
 import setings
 
 from datetime import datetime, date, time
@@ -74,6 +77,15 @@ def day_lessons(message):
 				less.handle_text(message, bot)
 			elif gr.value == 'ИСПк-402':
 				less = isp_402_403_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ЗИОк-102':
+				less = zio_102_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ЗИОк-202':
+				less = zio_202_101_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ЗИОк-302':
+				less = zio_202_101_52_00
 				less.handle_text(message, bot)
 
 
@@ -165,6 +177,15 @@ def handle_text(message):
 		base_group(bot, group, message)
 	elif (message.text.strip() == 'ИСПк-402-51-00') or (message.text.strip() == 'ИСПк-403-52-00') or (message.text.strip() == 'ИСПк-402') or (message.text.strip() == 'ИСПк-403'):
 		group = 'ИСПк-402'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ЗИОк-102-52-00') or (message.text.strip() == 'ЗИОк-102'):
+		group = 'ЗИОк-102'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ЗИОк-202-51-00') or (message.text.strip() == 'ЗИОк-101-51-00') or (message.text.strip() == 'ЗИОк-202') or (message.text.strip() == 'ЗИОк-101'):
+		group = 'ЗИОк-202'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ЗИОк-302-51-00') or (message.text.strip() == 'ЗИОк-201-51-00') or (message.text.strip() == 'ЗИОк-302') or (message.text.strip() == 'ЗИОк-101'):
+		group = 'ЗИОк-302'
 		base_group(bot, group, message)
 
 	if message.text.strip() == 'Сегодня':
