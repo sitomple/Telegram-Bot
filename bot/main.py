@@ -33,6 +33,11 @@ from groups.PSO2 import pso_204_52_00
 from groups.PSO3 import pso_201_202_51_00
 from groups.PSO3 import pso_303_52_00
 from groups.PSO3 import pso_304_52_00
+from groups.EKN1 import ekn_102_52_00
+from groups.FNK1 import fnk_102_52_00
+from groups.EKN2 import ekn_101_202_52_00
+from groups.FNK2 import fnk_202_52_00
+from groups.FNK3 import fnk_302_201_52_00
 import setings
 
 from datetime import datetime, date, time
@@ -147,6 +152,21 @@ def day_lessons(message):
 			elif gr.value == 'ПСОк-304':
 				less = pso_304_52_00
 				less.handle_text(message, bot)
+			elif gr.value == 'ЭКНк-102':
+				less = ekn_102_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФНк-102':
+				less = fnk_102_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ЭКНк-101':
+				less = ekn_101_202_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФНк-202':
+				less = fnk_202_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ФНк-302':
+				less = fnk_302_201_52_00
+				less.handle_text(message, bot)
 
 
 def base_group(bot, group, message):
@@ -188,7 +208,7 @@ def start(m, res=False):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
 	if (message.text.strip().lower() == 'help') or (message.text.strip().lower() == 'расписание'):
-		bot.send_message(message.chat.id, 'Напишите свою группу \nПример: ИСПк-204')
+		bot.send_message(message.chat.id, 'Напишите свою группу \nПример: ИСПк-204 \nЗИОк-202 \nФКк-202 \nПСОк-204')
 
 	if (message.text.strip() == 'ИСПк-101-51-00') or (message.text.strip() == 'ИСПк-101'):
 		group = 'ИСПк-101'
@@ -292,6 +312,23 @@ def handle_text(message):
 	elif (message.text.strip() == 'ПСОк-201-51-00') or (message.text.strip() == 'ПСОк-202-51-00') or (message.text.strip() == 'ПСОк-201') or (message.text.strip() == 'ПСОк-202'):
 		group = 'ПСОк-201'
 		base_group(bot, group, message)
+	elif (message.text.strip() == 'ЭКНк-102-52-00') or (message.text.strip() == 'ЭКНк-102'):
+		group = 'ЭКНк-102'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФНк-102-52-00') or (message.text.strip() == 'ФНк-102'):
+		group = 'ФНк-102'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ЭКНк-101-51-00') or (message.text.strip() == 'ЭКНк-202-52-00') or (message.text.strip() == 'ЭКНк-101') or (message.text.strip() == 'ЭКНк-202'):
+		group = 'ЭКНк-101'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФНк-202-52-00') or (message.text.strip() == 'ФНк-202'):
+		group = 'ФНк-202'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ФНк-201-51-00') or (message.text.strip() == 'ФНк-302-52-00') or (message.text.strip() == 'ФНк-201') or (message.text.strip() == 'ФНк-302'):
+		group = 'ФНк-302'
+		base_group(bot, group, message)
+
+
 
 	if message.text.strip() == 'Сегодня':
 		day_lessons(message)
