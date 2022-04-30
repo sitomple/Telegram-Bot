@@ -25,48 +25,48 @@ def handle_text(message,bot):
 
 def Monday(message, day,bot):
 	bot.send_message(message.chat.id, "Понедельник:")
-	cells = sheet['H26':'L32']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT26':'DB32']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None ) & (lesson.value != None ) & (room.value != None ) :
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
 
 def Tuesday(message, day,bot):
 	bot.send_message(message.chat.id, "Вторник:")
-	cells = sheet['H33':'L39']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT33':'DB39']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
 
 def Wednesday(message, day,bot):
 	bot.send_message(message.chat.id, "Среда:")
-	cells = sheet['H40':'L46']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT40':'DB46']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
 
 def Thursday(message, day,bot):
 	bot.send_message(message.chat.id, "Четверг:")
-	cells = sheet['H47':'L53']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT47':'DB53']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
 
 def Friday(message, day,bot):
 	bot.send_message(message.chat.id, "Пятница:")
-	cells = sheet['H54':'L60']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT54':'DB60']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")
 
 def Saturday(message, day,bot):
 	bot.send_message(message.chat.id, "Суббота:")
-	cells = sheet['H61':'L66']
-	for time, lesson, a, b, room in cells:
+	cells = sheet['CT61':'DB66']
+	for time, a, b, c, d, lesson, e, f, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
 							 text=f"Время: {time.value} \nПара: {lesson.value} \nВ аудитории: {room.value}")

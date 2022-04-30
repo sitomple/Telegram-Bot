@@ -25,7 +25,7 @@ def handle_text(message,bot):
 
 def Monday(message, day,bot):
 	bot.send_message(message.chat.id, "Понедельник:")
-	cells = sheet['H26':'L32']
+	cells = sheet['DH26':'DL32']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None ) & (lesson.value != None ) & (room.value != None ) :
 			bot.send_message(chat_id=message.chat.id,
@@ -33,7 +33,7 @@ def Monday(message, day,bot):
 
 def Tuesday(message, day,bot):
 	bot.send_message(message.chat.id, "Вторник:")
-	cells = sheet['H33':'L39']
+	cells = sheet['DH33':'DL39']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
@@ -41,7 +41,7 @@ def Tuesday(message, day,bot):
 
 def Wednesday(message, day,bot):
 	bot.send_message(message.chat.id, "Среда:")
-	cells = sheet['H40':'L46']
+	cells = sheet['DH40':'DL46']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
@@ -49,7 +49,7 @@ def Wednesday(message, day,bot):
 
 def Thursday(message, day,bot):
 	bot.send_message(message.chat.id, "Четверг:")
-	cells = sheet['H47':'L53']
+	cells = sheet['DH47':'DL53']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
@@ -57,7 +57,7 @@ def Thursday(message, day,bot):
 
 def Friday(message, day,bot):
 	bot.send_message(message.chat.id, "Пятница:")
-	cells = sheet['H54':'L60']
+	cells = sheet['DH54':'DL60']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
@@ -65,7 +65,7 @@ def Friday(message, day,bot):
 
 def Saturday(message, day,bot):
 	bot.send_message(message.chat.id, "Суббота:")
-	cells = sheet['H61':'L66']
+	cells = sheet['DH61':'DL66']
 	for time, lesson, a, b, room in cells:
 		if (time.value != None) & (lesson.value != None) & (room.value != None):
 			bot.send_message(chat_id=message.chat.id,
