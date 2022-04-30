@@ -26,6 +26,13 @@ from groups.FK3 import fk_302_52_00
 from groups.FK3 import fk_303_52_00
 from groups.FK3 import fk_301_201_52_00
 from groups.FK4 import fk_401_402_304_52_00
+from groups.PSO1 import pso_103_104_52_00
+from groups.PSO2 import pso_101_102_51_00
+from groups.PSO2 import pso_203_52_00
+from groups.PSO2 import pso_204_52_00
+from groups.PSO3 import pso_201_202_51_00
+from groups.PSO3 import pso_303_52_00
+from groups.PSO3 import pso_304_52_00
 import setings
 
 from datetime import datetime, date, time
@@ -118,6 +125,27 @@ def day_lessons(message):
 				less.handle_text(message, bot)
 			elif gr.value == 'ФКк-401':
 				less = fk_401_402_304_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-103':
+				less = pso_103_104_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-101':
+				less = pso_101_102_51_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-203':
+				less = pso_203_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-204':
+				less = pso_204_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-201':
+				less = pso_201_202_51_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-303':
+				less = pso_303_52_00
+				less.handle_text(message, bot)
+			elif gr.value == 'ПСОк-304':
+				less = pso_304_52_00
 				less.handle_text(message, bot)
 
 
@@ -242,6 +270,27 @@ def handle_text(message):
 		base_group(bot, group, message)
 	elif (message.text.strip() == 'ФКк-401-52-00') or (message.text.strip() == 'ФКк-402-52-00') or (message.text.strip() == 'ФКк-304-52-00') or (message.text.strip() == 'ФКк-401') or (message.text.strip() == 'ФКк-402') or (message.text.strip() == 'ФКк-304'):
 		group = 'ФКк-401'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-103-52-00') or (message.text.strip() == 'ПСОк-104-52-00') or (message.text.strip() == 'ПСОк-103') or (message.text.strip() == 'ПСОк-104'):
+		group = 'ПСОк-103'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-101-51-00') or (message.text.strip() == 'ПСОк-102-51-00') or (message.text.strip() == 'ПСОк-101') or (message.text.strip() == 'ПСОк-102'):
+		group = 'ПСОк-101'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-203-52-00') or (message.text.strip() == 'ПСОк-203'):
+		group = 'ПСОк-203'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-204-52-00') or (message.text.strip() == 'ПСОк-204'):
+		group = 'ПСОк-204'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-303-52-00') or (message.text.strip() == 'ПСОк-303'):
+		group = 'ПСОк-303'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-304-52-00') or (message.text.strip() == 'ПСОк-304'):
+		group = 'ПСОк-304'
+		base_group(bot, group, message)
+	elif (message.text.strip() == 'ПСОк-201-51-00') or (message.text.strip() == 'ПСОк-202-51-00') or (message.text.strip() == 'ПСОк-201') or (message.text.strip() == 'ПСОк-202'):
+		group = 'ПСОк-201'
 		base_group(bot, group, message)
 
 	if message.text.strip() == 'Сегодня':
