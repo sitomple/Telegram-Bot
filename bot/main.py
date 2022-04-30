@@ -208,7 +208,7 @@ def start(m, res=False):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
 	if (message.text.strip().lower() == 'help') or (message.text.strip().lower() == 'расписание'):
-		bot.send_message(message.chat.id, 'Напишите свою группу \nПример: ИСПк-204 \nЗИОк-202 \nФКк-202 \nПСОк-204')
+		bot.send_message(message.chat.id, 'Напишите свою группу \nПример: \n*ИСПк-204 \n*ЗИОк-202 \n*ФКк-202 \n*ПСОк-204 \n*ЭКНк-102 \n*ФНк-202')
 
 	if (message.text.strip() == 'ИСПк-101-51-00') or (message.text.strip() == 'ИСПк-101'):
 		group = 'ИСПк-101'
