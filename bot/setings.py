@@ -1,0 +1,2 @@
+PATH_TO_TABLE = 'lessons/lessons.xlsx'
+TOKEN_TELEGRAM = '5330322358:AAGMhGvAVOag3rldT5Gtpi0IXYRP-dhDbWk'
