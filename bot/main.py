@@ -191,8 +191,8 @@ def base_group(bot, group, message):
 # Команда start
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
-		bot.send_message(m.chat.id, 'Бот был написан Zarnii и Sitomple\nДля групп ИСПк 2 курса \n'
-									'Напишите Help')
+		bot.send_message(m.chat.id, 'Бот был написан Zarnii и Sitomple\nДля учебных групп колледжа вятгу\n'
+									'Напишите мне Help')
 		# Добавляем две кнопки
 		markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
 		item1 = telebot.types.KeyboardButton("Help")
@@ -336,10 +336,11 @@ def handle_text(message):
 	elif message.text.strip() == 'Завтра':
 		day_lessons(message)
 
-	if message.text.strip() == 'Послезавтра':
+	elif message.text.strip() == 'Послезавтра':
 		day_lessons(message)
 
-	if message.text.strip() == 'Неделя':
+	elif message.text.strip() == 'Неделя':
 		day_lessons(message)
+
 
 bot.infinity_polling()
