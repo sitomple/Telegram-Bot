@@ -1,4 +1,5 @@
 import requests
+import schedule
 import json
 import os
 
@@ -13,7 +14,7 @@ def get_timetable():
 	r = requests.get(url)
 	src = r.json()
 
-	#Проверка пути
+	# Проверка пути
 	if os.path.exists(f'{path}/bot/lessons'):
 		print(f"Директория с именем {group_name} уже существует!")
 	else:
@@ -29,23 +30,23 @@ def get_timetable():
 	urls = []
 	posts = src['response']['items']
 
-	#Ищет посты
+	# Ищет посты
 	for post in posts:
 		try:
-			#Нет смысла искать старое расписание, а новое будет первым, поэтому в списке один элемент
+			# Нет смысла искать старое расписание, а новое будет первым, поэтому в списке один элемент
 			if len(urls) == 0:
 				post = post["attachments"]
-				#Если в посте есть 'xlsx'
+				# Если в посте есть 'xlsx'
 				if post[0]['type'] == 'doc' and post[0]['doc']['ext'] == 'xlsx':
 					u = post[0]['doc']['url']
 					urls.append(u)
 		except Exception:
-			#print('err')
+			# print('err')
 			pass
 	
-	#print(urls)
+	# print(urls)
 
-	#Запись
+	# Запись
 	
 	try:
 		with open(f'{path}/bot/lessons/lessons.xlsx', 'wb') as file:
@@ -53,7 +54,10 @@ def get_timetable():
 			file.write(r.content)
 			os.remove(f'{path}/bot/lessons/{group_name}.json')
 	except Exception:
-		#print('err')
+		# print('err')
 		pass
 
-get_timetable()
+
+if __name__ == "__main__":
+	while True:
+		schedule.every().saturday().at("15:00").do(get_timetable())
