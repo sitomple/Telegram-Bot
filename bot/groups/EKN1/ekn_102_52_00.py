@@ -1,6 +1,6 @@
 import telebot
 import openpyxl
-from bot import setings
+from groups import setings
 from datetime import datetime, date, time
 
 bot = telebot.TeleBot(setings.TOKEN_TELEGRAM)

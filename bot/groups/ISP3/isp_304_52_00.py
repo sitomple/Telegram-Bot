@@ -1,6 +1,6 @@
 import telebot
 import openpyxl
-from bot import setings
+from groups import setings
 from datetime import datetime, date, time
 wb = openpyxl.load_workbook(setings.PATH_TO_TABLE)
 sheet = wb['СПО']

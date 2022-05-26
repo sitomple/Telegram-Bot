@@ -9,7 +9,7 @@ path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 
 def get_timetable():
-	url = f'https://api.vk.com/method/wall.get?domain={group_name}&count=36&access_token={token}&v=5.131'
+	url = f'https://api.vk.com/method/wall.get?domain={group_name}&count=15&access_token={token}&v=5.131'
 	r = requests.get(url)
 	src = r.json()
 
@@ -46,7 +46,7 @@ def get_timetable():
 	#print(urls)
 
 	#Запись
-	
+
 	try:
 		with open(f'{path}/bot/lessons/lessons.xlsx', 'wb') as file:
 			r = requests.get(urls[0], allow_redirects = True)

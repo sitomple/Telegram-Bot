@@ -1,5 +1,12 @@
 import telebot
 import openpyxl
+from day import for_teacher_monday
+from day import for_teacher_tuesday
+from day import for_teacher_thursday
+from day import for_teacher_wednesday
+from day import for_teacher_friday
+from day import for_teacher_saturday
+print('succseful import from "day"')
 from groups.ISP2 import isp_101_52_00
 from groups.ISP2 import isp_202_52_00
 from groups.ISP2 import isp_203_52_00
@@ -18,6 +25,7 @@ from groups.ISP4 import isp_402_403_52_00
 from groups.ZIO1 import zio_102_52_00
 from groups.ZIO2 import zio_202_101_52_00
 from groups.ZIO3 import zio_302_201_52_00
+print('50% import')
 from groups.FK1 import fk_102_104_52_00
 from groups.FK1 import fk_103_52_00
 from groups.FK2 import fk_202_52_00
@@ -38,9 +46,10 @@ from groups.FNK1 import fnk_102_52_00
 from groups.EKN2 import ekn_101_202_52_00
 from groups.FNK2 import fnk_202_52_00
 from groups.FNK3 import fnk_302_201_52_00
-import setings
+from groups import setings
 
 from datetime import datetime, date, time
+print('100% import')
 
 bot = telebot.TeleBot(setings.TOKEN_TELEGRAM)
 wb = openpyxl.load_workbook(setings.PATH_TO_TABLE)
@@ -188,6 +197,25 @@ def base_group(bot, group, message):
 			sheet[f'A{B + 1}'] = f'{message.chat.id}'
 			wb.save('base.xlsx')
 
+def teacher(bot, group, message):
+	bot.send_message(message.chat.id, f'Активнен предподаватель: {message.text.strip()}')
+	tumbler = 0
+	i = 0
+	wb = openpyxl.load_workbook('base.xlsx')
+	sheet = wb['List']
+	B = sheet.max_row
+	cells = sheet['A1':f'B{B}']
+	for id, gr in cells:
+		i += 1
+		if id.value == str(message.chat.id):
+			tumbler = 1
+			sheet[f'B{i}'] = f'{group}'
+		wb.save('base.xlsx')
+	if tumbler == 0:
+		sheet[f'B{B + 1}'] = f'{group}'
+		sheet[f'A{B + 1}'] = f'{message.chat.id}'
+		wb.save('base.xlsx')
+
 # Команда start
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
@@ -200,8 +228,9 @@ def start(m, res=False):
 		item3 = telebot.types.KeyboardButton("Завтра")
 		item4 = telebot.types.KeyboardButton("Послезавтра")
 		item5 = telebot.types.KeyboardButton("Неделя")
+		item6 = telebot.types.KeyboardButton("Я преподователь")
 		markup.add(item1, item2, item3)
-		markup.add(item4, item5)
+		markup.add(item4, item5, item6)
 		bot.send_message(m.chat.id, 'Выберите день, на который хотите получить расписание:',  reply_markup=markup)
 
 
@@ -341,6 +370,26 @@ def handle_text(message):
 
 	elif message.text.strip() == 'Неделя':
 		day_lessons(message)
+	elif message.text.strip() == 'Я преподователь':
+		d = input('На какой день хотите узнать расписание:')
+		if d == '1':
+			asnw = for_teacher_monday.Monday()
+			print(asnw)
+		elif d == '2':
+			asnw = for_teacher_tuesday.Tuesday()
+			print(asnw)
+		elif d == '3':
+			asnw = for_teacher_thursday.Thursday()
+			print(asnw)
+		elif d == '4':
+			asnw = for_teacher_wednesday.Wednesday()
+			print(asnw)
+		elif d == '5':
+			asnw = for_teacher_friday. Friday()
+			print(asnw)
+		elif d == '6':
+			asnw = for_teacher_saturday.Saturday()
+			print(asnw)
 
 
 bot.infinity_polling()
