@@ -22,7 +22,7 @@ def get_timetable():
 	
 	#print(posts)
 
-	
+
 	with open(f'{path}/bot/lessons/{group_name}.json', 'w', encoding = "utf-8") as file:
 		json.dump(src, file, indent = 4, ensure_ascii = False)
 
@@ -46,13 +46,8 @@ def get_timetable():
 	
 	# print(urls)
 
-<<<<<<< HEAD
-	#Запись
-
-=======
 	# Запись
-	
->>>>>>> ba6a5c3cb6aef5eaad72e61f5cbf175675d53fd2
+
 	try:
 		with open(f'{path}/bot/lessons/lessons.xlsx', 'wb') as file:
 			r = requests.get(urls[0], allow_redirects = True)
@@ -65,4 +60,4 @@ def get_timetable():
 
 if __name__ == "__main__":
 	while True:
-		schedule.every().saturday().at("15:00").do(get_timetable())
+		schedule.every().minute.at(":17").do(get_timetable())
